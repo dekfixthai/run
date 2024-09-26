@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Web App</title>
+</head>
+<body>
+    <h1>ยินดีต้อนรับสู่ Telegram Web App!</h1>
+    <div id="query-id"></div>
+
+    <script>
+        // ฟังก์ชันเพื่อดึง query_id จาก URL
+        function getQueryId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('query_id');
+        }
+
+        // แสดง query_id บนหน้าเว็บ
+        const queryId = getQueryId();
+        document.getElementById('query-id').innerText = `Query ID ของคุณ: ${queryId || 'ไม่มีข้อมูล'}`;
+    </script>
+</body>
+</html>
